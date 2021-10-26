@@ -1,0 +1,17 @@
+<script>
+let num = parseInt(prompt("Ingrese numero de partcipantes"))
+    var nombres = [];
+
+    for(t = 1; t <= num ; t++){
+        var p = prompt("Nombre del participante")
+        nombres.push(p);
+    }
+
+ganador (nombres);
+function ganador (nombres){
+    aleatorio = Math.floor(Math.random()*(nombres.length));
+    resultado = nombres[aleatorio];
+    alert(resultado);
+    alert(nombres);
+}
+</script>
