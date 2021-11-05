@@ -1,0 +1,71 @@
+<script>
+    //Metodo DE ORNENAMIENTO
+    let cuentaAtras=numero=>{
+        if (numero===0){
+            return;
+        }
+        console.log (numero);
+        return cuentaAtras(numero-1); 
+    } 
+    cuentaAtras(10);
+    
+    //METODO DE ORNENAMIENTO .sort(ALFABETICAMENTE)
+    let frutas= ["Manzana","Pera","Naranja","Sandia","Ciruela","Melon","Fresa","Durazno","Kiwi","Mango","Banana"];
+    console.log(frutas.sort());
+
+    
+    //METODO DE ORNENAMIENTO .sort(NUMERICAMENTE)
+    let numeros=[1,45,800,7643,0.5,3];
+    let orden=0
+    for(let i=0;i<numeros.length;i++){
+        for(let j=0;j<numeros.length;j++){
+            if(numeros[i]<numeros[j]){
+                orden=numeros[i];
+                numeros[i]=numeros[j];
+                numeros[j]=orden;
+            }
+        }
+    }
+    console.log(numeros);
+    //METODO DE ORNENAMIENTO .sort(POR EL USUARIO)
+    var usuario= prompt("Ingrese una fruta");  //Pide al usuario una fruta
+     frutas= ["Manzana","Pera","Naranja","Sandia","Ciruela","Melon","Fresa","Durazno","Kiwi","Mango","Banana"]; //Crea un array con las frutas
+    var frutasOrdenadas=frutas.sort(); //Ordena las frutas
+    var posicion=frutasOrdenadas.indexOf(usuario); //Busca la posicion de la fruta ingresada por el usuario
+    console.log(posicion);
+    if(posicion===-1){
+        alert("No se encontro la fruta");
+    }else{
+        alert("La fruta ingresada esta en la posicion: "+posicion);
+    }
+
+    // METODO DE ORNENAMIENTO .sort(POR EL USUARIO)
+
+    let usuario= prompt("Ingrese las letras con comas");
+     letras=usuario.split(",");
+     orden=0;    
+    for(let i=0;i<letras.length;i++){
+        for(let j=0;j<letras.length;j++){
+            if(letras[i]<letras[j]){
+                orden=letras[i];
+                letras[i]=letras[j];
+                letras[j]=orden;
+            }
+        }
+    }
+    console.log(letras);
+
+    //METODO DE ORNENAMIENTO (POR EL USUARIO NUMERICAMENTE)
+    let usuario= prompt("Ingrese numeros con comas");
+     numeros=usuario.split(",");
+     orden=0;
+     for(let i=0;i<numeros.length;i++){
+        for(let j=i+1;j<numeros.length;j++){
+            if(numeros[i]<numeros[j]){
+                orden=numeros[i];
+                numeros[i]=numeros[j];
+                numeros[j]=orden;
+            }
+        }
+    }
+</script>
